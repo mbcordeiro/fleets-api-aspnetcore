@@ -13,6 +13,10 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Fleet.Fleets.Infra.Singleton;
+using Fleet.Fleets.Domain.Interface;
+using Fleet.Fleets.Infra.Repostory;
+using Fleet.Fleets.Infra.EntityFramework;
+using Microsoft.EntityFrameworkCore;
 
 namespace Fleet.Fleets
 {
@@ -43,6 +47,9 @@ namespace Fleet.Fleets
                 c.IncludeXmlComments(apiPath);
             });
             services.AddSingleton<SingletonContainer>();
+            services.AddTransient<IVehicleRepository, FleetRepository>();
+            services.AddDbContext<FleetContext>(opt =>
+                                               opt.UseInMemoryDatabase("Fleet"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

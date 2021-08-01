@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fleet.Fleets", "Fleet.Fleets\Fleet.Fleets.csproj", "{184C375E-BA3A-402C-9577-71147C182C5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fleet.Fleets", "Fleet.Fleets\Fleet.Fleets.csproj", "{184C375E-BA3A-402C-9577-71147C182C5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fleet.Fleets.Domian", "Fleet.Fleets.Domian\Fleet.Fleets.Domian.csproj", "{D11DD3C0-0BE0-411C-B64F-90E1DA0B3FB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fleet.Fleets.Domain", "Fleet.Fleets.Domian\Fleet.Fleets.Domain.csproj", "{D11DD3C0-0BE0-411C-B64F-90E1DA0B3FB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fleet.Fleets.Infra", "Fleet.Fleets.Infra\Fleet.Fleets.Infra.csproj", "{2F579245-2651-4F7D-9A52-9938F5A00904}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fleet.Fleets.Infra", "Fleet.Fleets.Infra\Fleet.Fleets.Infra.csproj", "{2F579245-2651-4F7D-9A52-9938F5A00904}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

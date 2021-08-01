@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Fleet.Fleets.Domian\Fleet.Fleets.Domain.csproj" />
     <ProjectReference Include="..\Fleet.Fleets.Infra\Fleet.Fleets.Infra.csproj" />
   </ItemGroup>
 
