@@ -17,6 +17,8 @@ using Fleet.Fleets.Domain.Interface;
 using Fleet.Fleets.Infra.Repostory;
 using Fleet.Fleets.Infra.EntityFramework;
 using Microsoft.EntityFrameworkCore;
+using Fleet.Fleets.Infra.Model;
+using Fleet.Fleets.Infra.Facade;
 
 namespace Fleet.Fleets
 {
@@ -48,8 +50,11 @@ namespace Fleet.Fleets
             });
             services.AddSingleton<SingletonContainer>();
             services.AddTransient<IVehicleRepository, FleetRepository>();
+            services.AddTransient<IVehicleDetran, VehicleDetranFacade>();
             services.AddDbContext<FleetContext>(opt =>
                                                opt.UseInMemoryDatabase("Fleet"));
+            services.AddHttpClient();
+            services.Configure<DetranOptions>(Configuration.GetSection("DetranOptions"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

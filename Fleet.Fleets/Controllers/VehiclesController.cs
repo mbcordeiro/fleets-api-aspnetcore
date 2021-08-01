@@ -14,10 +14,12 @@ namespace Fleet.Fleets.Controllers
     public class VehiclesController : ControllerBase
     {
         private readonly IVehicleRepository vehicleRepository;
+        private readonly IVehicleDetran vehicleDetran;
 
-        public VehiclesController(IVehicleRepository vehicleRepository)
+        public VehiclesController(IVehicleRepository vehicleRepository, IVehicleDetran vehicleDetran)
         {
             this.vehicleRepository = vehicleRepository;
+            this.vehicleDetran = vehicleDetran;
         }
 
         [HttpGet]
@@ -43,6 +45,14 @@ namespace Fleet.Fleets.Controllers
         public IActionResult Put(Guid id, [FromBody] Vehicle vehicle)
         {
             vehicleRepository.Update(vehicle);
+
+            return NoContent();
+        }
+
+        [HttpPut("{id}/inspection-detran")]
+        public IActionResult Put(Guid id)
+        {
+            vehicleDetran.ScheduleDetranInspection(id);
 
             return NoContent();
         }
