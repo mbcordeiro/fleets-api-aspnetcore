@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Fleet.Fleets.Infra.Singleton;
 
 namespace Fleet.Fleets
 {
@@ -41,6 +42,7 @@ namespace Fleet.Fleets
                 var apiPath = Path.Combine(AppContext.BaseDirectory, "Fleet.Fleets.xml");
                 c.IncludeXmlComments(apiPath);
             });
+            services.AddSingleton<SingletonContainer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
